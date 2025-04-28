@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\PengajuanKonseling;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class PengajuanKonselingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $posts = Post::latest()->where('status','Published')->get();
-
-        return view('page.blog.blog', compact('posts'));
+        //
     }
 
     /**
@@ -39,6 +38,13 @@ class PostController extends Controller
     public function show(string $id)
     {
         //
+    }
+
+    public function exportPdf(string $id)
+    {
+        $data = PengajuanKonseling::findOrFail($id); // lebih aman pakai findOrFail
+        $pdf = Pdf::loadView('pdf.laporanawal', ['data' => $data]); // perbaiki passing data
+        return $pdf->download('pengajuan-konseling-' . $data->id . '.pdf');
     }
 
     /**

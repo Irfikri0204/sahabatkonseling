@@ -49,7 +49,7 @@
           <li>
             <a
               href="/layanan"
-              class="flex px-4 py-2 font-medium text-white rounded-md hover:bg-primary-600"
+              class="flex px-4 py-2 font-medium text-white rounded-md hover:bg-primary-600 {{ Request::is('layanan') ? 'bg-primary-700' : '' }}"
               >Layanan</a
             >
           </li>
@@ -69,7 +69,7 @@
           </li>
           <li>
             <a
-              href="/post"
+              href="{{ route('post.index') }}"
               class="flex px-4 py-2 font-medium text-white rounded-md hover:bg-primary-600  {{ (Request::is('post')|| Request::is('post*')) ? 'bg-primary-700' : '' }}">Postingan</a>
           </li>
 
@@ -88,7 +88,7 @@
               <ul class="space-y-2">
                 <li>
                   <a
-                    href="/about/konselor"
+                    href="{{ route('konselor.index') }}"
                     class="flex p-2 font-medium text-gray-600 rounded-md hover:bg-gray-100 hover:text-black"
                     >Tim Konselor</a
                   >

@@ -6,7 +6,7 @@ class="relative h-screen flex items-center justify-center text-white bg-primary-
 >
 <!-- Background Image + Overlay -->
 <div
-style="background-image: url('{{ asset('img/bg-hero.jpg') }}')"
+style="background-image: url('{{ asset('img/bg-hero.JPG') }}')"
   class="absolute inset-0 bg-cover bg-center bg-fixed"
 >
   <div class="absolute inset-0 bg-primary-500 opacity-60"></div>

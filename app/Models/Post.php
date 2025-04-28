@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Post extends Model
 {
@@ -31,6 +32,7 @@ class Post extends Model
             if (empty($post->slug)) {
                 $post->slug = Str::slug($post->title);
             }
+            $post->id_author ??= Auth::id();
         });
 
         static::updating(function ($post) {

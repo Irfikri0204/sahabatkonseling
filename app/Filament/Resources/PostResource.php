@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\PostResource\Pages;
 use App\Filament\Resources\PostResource\RelationManagers;
 use App\Models\Post;
+use Filament\Facades\Filament;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
@@ -26,7 +27,11 @@ class PostResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
 
+    protected static ?string $navigationLabel = 'Post';
+
     protected static ?string $navigationGroup = 'Postingan';
+
+    protected static ?int $navigationSort = 5;
 
     public static function form(Form $form): Form
     {
@@ -41,13 +46,13 @@ class PostResource extends Resource
                     TextInput::make('title')
                     ->required()
                     ->maxLength(255),
-                    Select::make('id_author')
-                    ->label('Penulis')
-                    ->relationship('user', 'name')
-                    ->searchable()
-                    ->preload()
-                    ->required(),
                     RichEditor::make('body')
+                    ->required(),
+                    Select::make('status')
+                    ->options([
+                        'Draft' => 'Draft',
+                        'Published' => 'Published'
+                    ])
                     ->required()
                 ])
             ]);

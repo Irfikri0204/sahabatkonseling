@@ -32,7 +32,7 @@ class KonselorResource extends Resource
 
     protected static ?string $navigationLabel = 'Konselor';
 
-    protected static ?int $navigationSort = 2;
+    protected static ?int $navigationSort = 7;
 
     public static function form(Form $form): Form
     {
@@ -57,6 +57,7 @@ class KonselorResource extends Resource
                 TextInput::make('nama')
                     ->label('Nama Lengkap')
                     ->required()
+                    ->disabled()
                     ->dehydrated()
                     ->reactive(),
                 FileUpload::make('pic')
