@@ -15,7 +15,7 @@
         </p>
         <div class="w-full py-5">
           <a
-            href="#portofolio"
+            href="/pengajuan-konseling"
             class="bg-secondary-500 text-black font-semibold py-3 px-5 rounded-xl hover:bg-secondary-700 w-fit block mx-auto"
             >Mulai Konseling</a
           >

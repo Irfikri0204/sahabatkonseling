@@ -22,7 +22,7 @@ style="background-image: url('{{ asset('img/bg-hero.JPG') }}')"
     hadir untuk mendukung setiap langkah kecil menuju perubahan berharga.
   </p>
   <a
-    href="#portofolio"
+    href="/pengajuan-konseling"
     class="bg-secondary-500 text-black font-semibold py-3 px-5 rounded-xl hover:bg-secondary-700"
     >Mulai Konseling</a
   >

@@ -3,6 +3,7 @@
 use App\Http\Controllers\KonselorController;
 use App\Http\Controllers\PengajuanKonselingController;
 use App\Http\Controllers\PostController;
+use App\Models\PengajuanKonseling;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,6 +17,5 @@ Route::get('/layanan', function(){
 Route::resource('about/konselor', KonselorController::class);
 
 Route::resource('post', PostController::class);
-
+Route::resource('pengajuan-konseling', PengajuanKonselingController::class);
 Route::get('pengajuan-konseling/export-pdf/{id}', [PengajuanKonselingController::class, 'exportPdf'])->name('pengajuan-konseling.export-pdf');
-
